@@ -29,6 +29,9 @@ const MovieCard: React.FC<MovieCardProps> = ({ imdbID, Poster, Title, Year, Type
         <Typography variant="h6" className="movie-card-title">
           {Title}
         </Typography>
+        <Typography variant="body2" className="movie-card-title">
+        IMBD ID: {imdbID}
+    </Typography>
         <Typography variant="body2" className="movie-card-year">
           Year: {Year}
         </Typography>

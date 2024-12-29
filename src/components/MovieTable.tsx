@@ -18,6 +18,7 @@ const MovieTable: React.FC<MovieTableProps> = ({ movies, loading }) => {
   const navigate = useNavigate();
 
   const columns: GridColDef[] = [
+    { field: 'imdbID', headerName: 'IMDb ID', flex: 1 },
     { field: 'Title', headerName: 'Title', flex: 1 },
     { field: 'Year', headerName: 'Year', flex: 1 },
     { field: 'Type', headerName: 'Type', flex: 1 },
@@ -29,6 +30,7 @@ const MovieTable: React.FC<MovieTableProps> = ({ movies, loading }) => {
         <DataGrid
           rows={Array.from({ length: 10 }).map((_, index) => ({
             id: index,
+            imdbID: <Skeleton variant="text" width="80%" className="skeleton-cell" />,
             Title: <Skeleton variant="text" width="80%" className="skeleton-cell" />,
             Year: <Skeleton variant="text" width="50%" className="skeleton-cell" />,
             Type: <Skeleton variant="text" width="60%" className="skeleton-cell" />,
@@ -45,6 +47,7 @@ const MovieTable: React.FC<MovieTableProps> = ({ movies, loading }) => {
         <DataGrid
           rows={movies.map((movie) => ({
             id: movie.imdbID,
+            imdbID: movie.imdbID,
             Title: movie.Title,
             Year: movie.Year,
             Type: movie.Type.charAt(0).toUpperCase() + movie.Type.slice(1),
