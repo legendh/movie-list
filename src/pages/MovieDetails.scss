@@ -1,0 +1,69 @@
+@use '../assets/styles/variables' as vars;
+
+.movie-details-container {
+  background-color: #141414;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+
+  &.has-poster {
+    background-image: linear-gradient(
+        to top,
+        rgba(20, 20, 20, 0.9),
+        rgba(20, 20, 20, 0.7)
+      ),
+      var(--poster-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.back-button {
+  background-color: vars.$primary-color !important;
+  border-radius: 0 !important;
+  color: #fff;
+  margin-bottom: 20px !important;
+
+  &:hover {
+    background-color: vars.$secondary-color !important;
+  }
+}
+
+.movie-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 20px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.movie-poster {
+  width: 50%;
+  max-width: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.movie-info {
+  text-align: left;
+}
+
+.movie-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: vars.$primary-color;
+}
+
+.movie-detail {
+  margin-bottom: 10px;
+  font-size: 18px;
+}

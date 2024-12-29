@@ -1,0 +1,181 @@
+@use './variables' as vars;
+@use "sass:color";
+
+/* Normalize styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #141414;
+  color: #ffffff;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* MuiPaper-root customization */
+.MuiPaper-root {
+  background-color: #000 !important;
+  color: vars.$primary-color !important;
+
+  .MuiMenuItem-root {
+    &:hover {
+      background-color: #333;
+    }
+  }
+}
+
+/* MuiSvgIcon-root customization */
+.MuiSvgIcon-root {
+  color: vars.$primary-color;
+}
+
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium {
+  color: vars.$primary-color;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium:hover {
+  color: vars.$secondary-color;
+  transform: scale(1.2);
+}
+
+/* Date picker styles */
+.date-picker-container {
+  .MuiDateCalendar-root {
+    background-color: #000;
+    color: vars.$primary-color;
+    width: 100%;
+
+    .MuiDayPicker-weekContainer {
+      color: vars.$primary-color;
+    }
+
+    .Mui-selected {
+      background-color: vars.$primary-color !important;
+      color: #fff !important;
+    }
+
+    .MuiPickersArrowSwitcher-root {
+      color: vars.$primary-color;
+    }
+
+    /* Custom scrollbar */
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: vars.$primary-color;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: color.mix(black, vars.$primary-color, 10%);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #1c1c1c;
+    }
+  }
+}
+
+/* Data grid column header background */
+.MuiDataGrid-columnHeader {
+  background: #000;
+}
+
+/* MuiInput customization */
+.MuiInput-root {
+  color: #ffffff; 
+  font-size: 16px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    color: vars.$primary-color;
+  }
+
+  &.Mui-focused {
+    color: vars.$primary-color;
+  }
+}
+
+.MuiInput-input {
+  color: vars.$primary-color !important;
+  caret-color: vars.$primary-color;
+  font-weight: 400;
+  transition: color 0.3s ease;
+
+  &:focus {
+    color: vars.$primary-color;
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #b3b3b3;
+    opacity: 1;
+  }
+}
+
+.MuiInputLabel-root {
+  color: vars.$primary-color !important;
+
+  &.Mui-focused {
+    color: vars.$secondary-color !important;
+    font-weight: bold;
+  }
+}
+
+.MuiInput-underline {
+  &::before {
+    border-bottom: 1px solid #ffffff;
+  }
+
+  &:hover:not(.Mui-disabled)::before {
+    border-bottom: 1px solid vars.$primary-color;
+  }
+
+  &::after {
+    border-bottom: 2px solid vars.$primary-color;
+  }
+}

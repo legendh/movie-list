@@ -1,0 +1,29 @@
+@use '../assets/styles/variables' as vars;
+@use "sass:color";
+
+.movie-list {
+  background-color: #141414;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+
+  .MuiPaginationItem-root {
+    color: #ffffff;
+  }
+
+  .Mui-selected {
+    background-color: vars.$primary-color !important;
+    color: #ffffff;
+    font-weight: bold;
+
+    &:hover {
+      background-color: color.mix(black, vars.$primary-color, 10%);
+    }
+  }
+}

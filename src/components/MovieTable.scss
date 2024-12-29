@@ -1,0 +1,61 @@
+@use '../assets/styles/variables' as vars;
+
+.movie-table-container {
+  height: 100%;
+  width: 100%;
+  background-color: #141414;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+.movie-data-grid {
+  & .MuiDataGrid-columnHeaders {
+    background-color: #1a1a1a;
+    color: vars.$primary-color;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid vars.$primary-color;
+  }
+
+  & .MuiDataGrid-cell {
+    background-color: #1c1c1c;
+    color: #dfdfdf;
+    font-size: 14px;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #262626;
+    }
+  }
+
+  & .MuiDataGrid-row:nth-of-type(odd) {
+    background-color: #1c1c1c;
+  }
+
+  & .MuiDataGrid-footerContainer {
+    display: none;
+  }
+
+  & .MuiPaginationItem-root {
+    color: #ffffff;
+    background-color: #333333;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: vars.$primary-color;
+      color: #ffffff;
+    }
+
+    &.Mui-selected {
+      background-color: vars.$primary-color;
+      color: #ffffff;
+      font-weight: bold;
+    }
+  }
+}
+
+.skeleton-cell {
+  background-color: #333333;
+  border-radius: 4px;
+}
