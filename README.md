@@ -56,6 +56,7 @@ This project is a single-page application (SPA) for browsing movies. It uses the
 - Full-page loading indicator.
 
 ## Folder Structure
+```
 src/
 ├── components/
 │   ├── Header.tsx            # Header with search and filters
@@ -77,3 +78,49 @@ src/
 │   ├── index.ts              # Redux store configuration
 │   ├── movieSlice.ts         # Redux slice for managing movie data
 │   └── viewModeSlice.ts      # Redux slice for managing grid/list view mode
+```
+
+## How to Run the Application
+
+Follow these steps to set up and run the Movie Library Application:
+
+### 1. Prerequisites
+
+Ensure you have the following installed on your machine:
+- **Node.js** (v14 or higher recommended)
+- **npm** (Node Package Manager)
+
+To check if Node.js and npm are installed, run:
+node -v
+npm -v
+
+If not installed, download and install from [Node.js Official Website](https://nodejs.org/).
+
+### 2. Clone the Repository
+
+Clone the project repository from GitHub:
+git clone https://github.com/legendh/movie-list
+
+Navigate into the project directory:
+cd <project-folder>
+
+### 3. Install Dependencies
+
+Install all the required dependencies using `npm`:
+npm install
+
+### 5. Start the Development Server
+
+Run the application in development mode:
+npm run dev
+
+The application will be accessible at:
+
+http://localhost:5173/
+
+### 6. Build for Production
+
+To build the application for production, run:
+npm run build
+
+The production-ready files will be located in the `build/` directory.
